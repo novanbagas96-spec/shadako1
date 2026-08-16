@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Happy Birthday 🎂</title>
+
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600;700&family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+
+            min-height: 100vh;
+
+            color: #5a2540;
+
+            background:
+                radial-gradient(
+                    circle at 10% 20%,
+                    #ffffff 0 2px,
+                    transparent 3px
+                ),
+                radial-gradient(
+                    circle at 80% 10%,
+                    #ffffff 0 2px,
+                    transparent 3px
+                ),
+                linear-gradient(
+                    135deg,
+                    #ffd6e7,
+                    #ffc0d9,
+                    #ffb3d0,
+                    #ffdce9
+                );
+
+            background-size:
+                80px 80px,
+                120px 120px,
+                100% 100%;
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 30px 15px;
+
+            overflow-x: hidden;
+        }
+
+
+        /* =========================
+           BACKGROUND DEKORASI
+        ========================= */
+
+        .decoration {
+            position: fixed;
+
+            inset: 0;
+
+            pointer-events: none;
+
+            overflow: hidden;
+
+            z-index: 0;
+        }
+
+
+        /* BALON */
+
+        .balloon {
+            position: absolute;
+
+            width: 55px;
+            height: 70px;
+
+            border-radius: 50% 50% 45% 45%;
+
+            opacity: .85;
+
+            animation: balloonFloat 5s ease-in-out infinite;
+        }
+
+        .balloon::after {
+            content: "";
+
+            position: absolute;
+
+            width: 1px;
+            height: 100px;
+
+            background: #9d536f;
+
+            top: 65px;
+            left: 50%;
+        }
+
+        .balloon::before {
+            content: "";
+
+            position: absolute;
+
+            bottom: -5px;
+
+            left: 50%;
+
+            transform: translateX(-50%);
+
+            border-left: 6px solid transparent;
+            border-right: 6px solid transparent;
+
+            border-top: 10px solid currentColor;
+        }
+
+        .balloon1 {
+            left: 4%;
+            top: 15%;
+
+            background: #ff6f9f;
+            color: #ff6f9f;
+        }
+
+        .balloon2 {
+            right: 5%;
+            top: 12%;
+
+            background: #ffd166;
+            color: #ffd166;
+
+            animation-delay: 1s;
+        }
+
+        .balloon3 {
+            left: 8%;
+            bottom: 10%;
+
+            background: #b388ff;
+            color: #b388ff;
+
+            animation-delay: 2s;
+        }
+
+        .balloon4 {
+            right: 8%;
+            bottom: 12%;
+
+            background: #ff8fab;
+            color: #ff8fab;
+
+            animation-delay: 3s;
+        }
+
+        @keyframes balloonFloat {
+
+            0%,100% {
+                transform:
+                    translateY(0)
+                    rotate(-3deg);
+            }
+
+            50% {
+                transform:
+                    translateY(-20px)
+                    rotate(3deg);
+            }
+
+        }
+
+
+        /* BINTANG */
+
+        .star {
+            position: absolute;
+
+            color: white;
+
+            font-size: 18px;
+
+            animation: sparkle 2s infinite alternate;
+        }
+
+        .star1 {
+            top: 10%;
+            left: 30%;
+        }
+
+        .star2 {
+            top: 25%;
+            right: 25%;
+            animation-delay: .5s;
+        }
+
+        .star3 {
+            bottom: 20%;
+            left: 25%;
+            animation-delay: 1s;
+        }
+
+        .star4 {
+            bottom: 15%;
+            right: 30%;
+            animation-delay: 1.5s;
+        }
+
+        @keyframes sparkle {
+
+            from {
+                opacity: .3;
+                transform: scale(.7);
+            }
+
+            to {
+                opacity: 1;
+                transform: scale(1.3);
+            }
+
+        }
+
+
+        /* =========================
+           CARD
+        ========================= */
+
+        .card {
+
+            position: relative;
+
+            z-index: 2;
+
+            width: 100%;
+
+            max-width: 600px;
+
+            padding: 35px 25px;
+
+            text-align: center;
+
+            background:
+                rgba(255,255,255,.82);
+
+            border:
+                2px solid rgba(255,255,255,.9);
+
+            border-radius: 30px;
+
+            box-shadow:
+                0 20px 60px rgba(160,60,100,.2);
+
+        }
+
+
+        /* =========================
+           BADGE
+        ========================= */
+
+        .badge {
+
+            display: inline-block;
+
+            padding: 7px 16px;
+
+            border-radius: 50px;
+
+            background: #ffe4ef;
+
+            color: #d84b7b;
+
+            font-size: 12px;
+
+            font-weight: 700;
+
+            letter-spacing: 1px;
+
+            margin-bottom: 15px;
+
+        }
+
+
+        /* =========================
+           TITLE
+        ========================= */
+
+        h1 {
+
+            font-family:
+                'Dancing Script',
+                cursive;
+
+            font-size:
+                clamp(55px,12vw,85px);
+
+            line-height: 1;
+
+            color: #e94f87;
+
+            margin-bottom: 5px;
+
+        }
+
+
+        .name {
+
+            font-size:
+                clamp(25px,6vw,38px);
+
+            font-weight: 700;
+
+            color: #742c4c;
+
+        }
+
+
+        .subtitle {
+
+            margin-top: 10px;
+
+            color: #87546b;
+
+            font-size: 14px;
+
+        }
+
+
+        /* =========================
+           FOTO
+        ========================= */
+
+        .photo {
+
+            width: 150px;
+
+            height: 150px;
+
+            margin: 25px auto;
+
+            display: block;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border:
+                6px solid #ff9fc0;
+
+            box-shadow:
+                0 10px 30px
+                rgba(214,70,120,.25);
+
+        }
+
+
+        /* =========================
+           CAKE
+        ========================= */
+
+        .cake {
+
+            font-size: 80px;
+
+            margin: 15px 0;
+
+            animation:
+                cakeFloat 3s
+                ease-in-out infinite;
+
+        }
+
+        @keyframes cakeFloat {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-8px);
+            }
+
+        }
+
+
+        /* =========================
+           BUTTON
+        ========================= */
+
+        button {
+
+            border: none;
+
+            cursor: pointer;
+
+            padding:
+                12px 22px;
+
+            margin: 6px;
+
+            border-radius: 50px;
+
+            font-family:
+                'Poppins';
+
+            font-weight: 600;
+
+            color: white;
+
+            background:
+                #e94f87;
+
+            transition:
+                .25s;
+
+        }
+
+        button:hover {
+
+            transform:
+                translateY(-3px);
+
+            background:
+                #d93672;
+
+        }
+
+        .secondary {
+
+            background:
+                #f7a1bd;
+
+            color:
+                #742c4c;
+
+        }
+
+        .secondary:hover {
+
+            background:
+                #ee8eae;
+
+        }
+
+
+        /* =========================
+           MESSAGE
+        ========================= */
+
+        .message {
+
+            display: none;
+
+            margin-top: 25px;
+
+            padding: 25px;
+
+            text-align: left;
+
+            line-height: 1.8;
+
+            font-size: 14px;
+
+            background:
+                #fff2f7;
+
+            border:
+                1px solid #ffd1e1;
+
+            border-radius: 18px;
+
+            color: #633449;
+
+        }
+
+        .message.show {
+
+            display: block;
+
+        }
+
+        .message h2 {
+
+            font-family:
+                'Dancing Script',
+                cursive;
+
+            font-size: 32px;
+
+            color:
+                #e94f87;
+
+            text-align: center;
+
+            margin-bottom: 15px;
+
+        }
+
+        .signature {
+
+            margin-top: 15px;
+
+            text-align: right;
+
+            font-family:
+                'Dancing Script',
+                cursive;
+
+            font-size: 25px;
+
+            color:
+                #e94f87;
+
+        }
+
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+
+            margin-top: 25px;
+
+            font-size: 11px;
+
+            color: #a36a82;
+
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        .confetti {
+
+            position: fixed;
+
+            top: -20px;
+
+            font-size: 20px;
+
+            animation:
+                jatuh 3s linear forwards;
+
+            z-index: 10;
+
+            pointer-events: none;
+
+        }
+
+        @keyframes jatuh {
+
+            from {
+
+                transform:
+                    translateY(0)
+                    rotate(0);
+
+                opacity: 1;
+
+            }
+
+            to {
+
+                transform:
+                    translateY(110vh)
+                    rotate(360deg);
+
+                opacity: 0;
+
+            }
+
+        }
+
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media(max-width:500px) {
+
+            .card {
+
+                padding:
+                    30px 18px;
+
+            }
+
+            .photo {
+
+                width: 130px;
+                height: 130px;
+
+            }
+
+            .cake {
+
+                font-size: 65px;
+
+            }
+
+            .message {
+
+                font-size: 13px;
+
+            }
+
+            button {
+
+                width: 90%;
+
+                max-width: 280px;
+
+            }
+
+            .balloon {
+
+                transform:
+                    scale(.7);
+
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         DEKORASI
+    ========================= -->
+
+    <div class="decoration">
+
+        <div class="balloon balloon1"></div>
+
+        <div class="balloon balloon2"></div>
+
+        <div class="balloon balloon3"></div>
+
+        <div class="balloon balloon4"></div>
+
+
+        <div class="star star1">
+            ✨
+        </div>
+
+        <div class="star star2">
+            ⭐
+        </div>
+
+        <div class="star star3">
+            ✨
+        </div>
+
+        <div class="star star4">
+            ⭐
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         CARD
+    ========================= -->
+
+    <div class="card">
+
+
+        <div class="badge">
+
+            🎉 shadako 🎉
+
+        </div>
+
+
+        <h1>
+
+            Happy Birthday!
+
+        </h1>
+
+
+        <div class="name">
+
+            karissa 🎂
+
+        </div>
+
+
+        <p class="subtitle">
+
+            Selamat bertambah umur,
+            dan semangat tujuh belas
+
+        </p>
+
+
+        <!-- FOTO -->
+
+        <img
+            class="photo"
+            src="sawako1.jpeg"
+        >
+
+
+        <!-- KUE -->
+
+        <div class="cake">
+
+            🎂
+
+        </div>
+
+
+        <!-- BUTTON -->
+
+        <div>
+
+            <button
+                onclick="bukaUcapan()"
+            >
+
+                💌 Buka Ucapan
+
+            </button>
+
+
+            <button
+                class="secondary"
+                onclick="rayakan()"
+            >
+
+                🎉 Rayakan
+
+            </button>
+
+        </div>
+
+
+        <!-- UCAPAN -->
+
+        <div
+            class="message"
+            id="message"
+        >
+
+
+            <h2>
+
+                Selamat Ulang Tahun! 🎂
+
+            </h2>
+
+
+            <p>
+
+                Selamat ulang tahun,
+                rissa anjay mabar 😂
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                Happy birthdayyy! 🎉🥳
+
+Selamat ulang tahun yaa! Semoga di umur yang baru ini makin bahagia, makin sukses Semoga semua yang diinginkan bisa pelan-pelan tercapai, urusannya dilancarin, dan jangan lupa selalu jaga kesehatan.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                Semoga tahun ini lebih banyak
+                bahagianya daripada dramanya,
+                lebih banyak ketawanya daripada
+                stresnya
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                Terima kasih sudah menjadi teman
+                yang cukup random untuk diajak
+                bercanda dan cukup waras untuk
+                diajak ngobrol.
+
+            </p>
+
+
+            <br>
+
+
+            <p>
+
+                Pokoknya semoga hari ini seru, jangan banyak pikiran, nikmatin aja harinya. Tetep jadi diri sendiri yang asik dan jangan berubah jadi NPC 😭🤣
+
+Have a great dayy! 🎂✨ Semoga tahun ini jadi tahun yang lebih keren dari sebelumnya.
+                🎉🎂
+
+            </p>
+
+
+            <div class="signature">
+
+                #shanub 😂
+
+            </div>
+
+
+        </div>
+
+
+        <footer>
+
+            by novan jago setara ruok 😎
+
+        </footer>
+
+
+    </div>
+
+
+    <script>
+
+
+        /* =========================
+           BUKA UCAPAN
+        ========================= */
+
+        function bukaUcapan() {
+
+            const message =
+                document.getElementById(
+                    "message"
+                );
+
+            message.classList.toggle(
+                "show"
+            );
+
+            rayakan();
+
+        }
+
+
+        /* =========================
+           CONFETTI
+        ========================= */
+
+        function rayakan() {
+
+            const emoji = [
+
+                "🎉",
+                "🎊",
+                "✨",
+                "🥳",
+                "⭐",
+                "🎂",
+                "🎈"
+
+            ];
+
+
+            for (
+                let i = 0;
+                i < 40;
+                i++
+            ) {
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "confetti";
+
+
+                item.innerText =
+                    emoji[
+                        Math.floor(
+                            Math.random()
+                            * emoji.length
+                        )
+                    ];
+
+
+                item.style.left =
+                    Math.random()
+                    * 100
+                    + "vw";
+
+
+                item.style.animationDelay =
+                    Math.random()
+                    * 1.5
+                    + "s";
+
+
+                document.body.appendChild(
+                    item
+                );
+
+
+                setTimeout(() => {
+
+                    item.remove();
+
+                }, 4000);
+
+            }
+
+        }
+
+    </script>
+
+</body>
+</html>
